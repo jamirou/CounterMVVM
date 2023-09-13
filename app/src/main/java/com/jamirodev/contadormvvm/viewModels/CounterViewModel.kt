@@ -6,12 +6,13 @@ import androidx.lifecycle.ViewModel
 
 
 class CounterViewModel: ViewModel() {
-    private val _counter = mutableStateOf(0)
-    val counter: State<Int> = _counter
+//    private val _counter = mutableStateOf(0)
+//    val counter: State<Int> = _counter
+//
+//    fun add() {
+//        _counter.value = _counter.value + 1
+//    }
 
-    fun add() {
-        _counter.value = _counter.value + 1
-    }
 
-
+    var counter = mutableStateOf(0)
 }

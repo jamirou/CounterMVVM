@@ -16,22 +16,21 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
-
+import com.jamirodev.contadormvvm.viewModels.CounterViewModel
 @Composable
-fun Counter() {
+fun Counter(viewModel: CounterViewModel) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
     ) {
         Text(
-            text = "0",
+            text = viewModel.counter.value.toString(),
             fontWeight = FontWeight.Bold,
             fontSize = 40.sp
         )
 
         FloatingActionButton(
-            onClick = { /*TODO*/ },
+            onClick = { viewModel.add() },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(15.dp)
@@ -46,5 +45,5 @@ fun Counter() {
 @Preview(showBackground = true)
 @Composable
 fun CounterPreview() {
-    Counter()
+    Counter(CounterViewModel())
 }

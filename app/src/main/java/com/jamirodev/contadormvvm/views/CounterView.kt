@@ -30,7 +30,7 @@ fun Counter(viewModel: CounterViewModel) {
         )
 
         FloatingActionButton(
-            onClick = { viewModel.counter.value = viewModel.counter.value + 1 },
+            onClick = { viewModel.add() },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(15.dp)
